@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        :root {
+            --bg-dark: #180505;
+            --bg-content: linear-gradient(to bottom, #0c0303, #180505);
+            --accent-red: #ff0000;
+            --text-main: #aaaaaa;
+            --text-secondary: #ffffff;
+            --text-spec: #ffffff;
+        }
+        body {
+            background: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .content-wrapper {
+            background: var(--bg-content);
+            flex: 1;
+        }
+        .navbar, .footer {
+            background-color: #000 !important;
+            border-bottom: 1px solid var(--accent-red);
+        }
+        .btn-red {
+            background-color: var(--accent-red);
+            color: white;
+            border: none;
+        }
+        .btn-red:hover {
+            background-color: #cc0000;
+        }
+        .card {
+            background-color: rgba(30, 30, 30, 0.8);
+            border: 1px solid #444;
+            transition: 0.3s;
+            backdrop-filter: blur(5px);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-red);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+        }
+        .price {
+            color: var(--accent-red);
+            font-weight: bold;
+        }
+        h1, h2, h3, h4, h5, h6, .card-title {
+            color: var(--text-secondary);
+        }
+        .text-muted {
+            color: var(--text-spec) !important;
+        }
+    </style>
+    {% block title %}{% endblock %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark py-3">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/">
+            <span style="color: var(--accent-red);">ACC</span>MARKET
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link active" href="/">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="/games">Игры</a></li>
+                <li class="nav-item"><a class="nav-link" href="/social">Соцсети</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li>
+                    <a href="/cart" class="nav-link">
+                        <i class="bi bi-cart3"></i> Корзина
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="content-wrapper">
+    {% block body %}{% endblock %}
+</div>
+
+<footer class="footer py-4">
+    <div class="container text-center">
+        <p style="color: var(--text-spec);">© 2025 AccMarket. Все права защищены.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

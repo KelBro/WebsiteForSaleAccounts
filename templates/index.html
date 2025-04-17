@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>ACCMarket</title>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid bg-black py-5 text-center">
+    <h1 class="display-4 fw-bold" style="color: var(--text-secondary);">МАГАЗИН ПО ПРОДАЖЕ АККАУНТОВ</h1>
+    <p style="color: var(--text-spec);">гарантия безопасности | мгновенная доставка</p>
+</div>
+
+<div class="container py-5">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://via.placeholder.com/300x200/333/ff0000?text=Fortnite" class="card-img-top" alt="Аккаунт">
+                <div class="card-body">
+                    <h5 class="card-title">Fortnite</h5>
+                    <p class="text-muted small">Skull Trooper + 20 скинов</p>
+                    <div class="price">1 299 ₽</div>
+                </div>
+                <div class="card-footer bg-dark">
+                    <button class="btn btn-red w-100">Купить</button>
+                </div>
+            </div>
+        </div>
+        <!-- Дополнительные карточки -->
+    </div>
+</div>
+{% endblock %}
