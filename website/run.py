@@ -1,27 +1,28 @@
 from flask import Flask, render_template
-from data import db_session
-from data.__all_models import catalog_accounts
+from config_reader import config
+from website.data import db_session
+from website.data.__all_models import catalog_accounts
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'o/f#b>v]Twg,pY*3ZrCjRs6EI3AQ/gt.UA!*e2w{f{p74b2?{@W0qFNs–TB.43[>'
+app.config['SECRET_KEY'] = config.secret_key.get_secret_value()
 
 
 @app.route('/')
 def index():
-    session = db_session.create_session()
-    accounts = session.query(catalog_accounts.Catalog).all()
-    session.close()
-    return render_template('index.html', accounts=accounts)
-
+    try:
+        session = db_session.create_session()
+        accounts = session.query(catalog_accounts.Catalog).all()
+        return render_template('index.html', accounts=accounts)
+    except Exception as e:
+        print(f"Database error: {e}")
+        return render_template('error.html', error="Database error")
+    finally:
+        if 'session' in locals():
+            session.close()
 
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-
-def main():
-    db_session.global_init("db/accounts.db")
-    app.run(port=8080, host='127.0.0.1', debug=True)
-
-if __name__ == '__main__':
-    main()
+def run_website():
+    app.run(port=8080, host='127.0.0.1', debug=False, use_reloader=False)

@@ -11,14 +11,14 @@
 </div>
 
 <div class="container py-5">
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">  <!-- Центрирование и адаптивные колонки -->
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
         {% for account in accounts %}
         <div class="col">
             <div class="card h-100">
                 <a href="/account/info/{{ account.name_product }}" class="text-decoration-none">
                     <div class="card-body">
-                        <h5 class="card-title">{{ account.name_game }}</h5>
-                        <p class="text-muted small">{{ account.name_product }}</p>
+                        <h5 class="card-title">{{ account.game_name }}</h5>
+                        <p class="text-muted small">{{ account.product_name }}</p>
                         <div class="price">{{ account.price }} ₽</div>
                     </div>
                 </a>
