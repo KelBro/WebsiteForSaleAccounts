@@ -5,20 +5,20 @@
 {% endblock %}
 
 {% block body %}
-<div class="container-fluid bg-black py-5 text-center">
-    <h1 class="display-4 fw-bold" style="color: var(--text-secondary);">МАГАЗИН ПО ПРОДАЖЕ АККАУНТОВ</h1>
-    <p style="color: var(--text-spec);">гарантия безопасности | мгновенная доставка</p>
+<div class="container-fluid bg-primary text-white py-5 text-center">
+    <h1 class="display-4 fw-bold mb-3">МАГАЗИН АККАУНТОВ</h1>
+    <p class="lead">Безопасные покупки · Мгновенная доставка</p>
 </div>
 
 <div class="container py-5">
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
         {% for account in accounts %}
-        <div class="col">
-            <div class="card h-100">
-                <a href="/account/info/{{ account.name_product }}" class="text-decoration-none">
-                    <div class="card-body">
+        <div class="col d-flex">
+            <div class="card h-100 border-0 w-100">
+                <a href="/account/info/{{ account.id }}" class="text-decoration-none text-dark">
+                    <div class="card-body text-center">
                         <h5 class="card-title">{{ account.game_name }}</h5>
-                        <p class="text-muted small">{{ account.product_name }}</p>
+                        <p class="text-muted">{{ account.product_name }}</p>
                         <div class="price">{{ account.price }} ₽</div>
                     </div>
                 </a>

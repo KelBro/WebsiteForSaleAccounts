@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>{{ account.product_name }} | ACCMarket</title>
+{% endblock %}
+
+{% block body %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card border-0 shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">{{ account.game_name }} - {{ account.product_name }}</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img src="https://via.placeholder.com/500x300?text=Account+Preview"
+                                 class="img-fluid rounded" alt="Превью">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex flex-column h-100">
+                                <h3 class="price mb-4">{{ account.price }} ₽</h3>
+                                <p class="lead">{{ account.description }}</p>
+                                <div class="mt-auto d-grid gap-2">
+                                    <button class="btn btn-blue btn-lg">
+                                        <i class="bi bi-cart-plus"></i> В корзину
+                                    </button>
+                                    <button class="btn btn-outline-primary btn-lg">
+                                        <i class="bi bi-lightning"></i> Купить сейчас
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-lg mt-4">
+                <div class="card-body">
+                    <h4 class="mb-4"><i class="bi bi-info-circle"></i> Инструкция</h4>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item border-0">После оплаты вам выдается ссылка Telegram аккаунта администратора.</li>
+                        <li class="list-group-item border-0">Напишите администратору о том, что вы купили товар.</li>
+                        <li class="list-group-item border-0">Предоставьте чек оплаты, карточку товара.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

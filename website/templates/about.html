@@ -1,9 +1,49 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>О магазине</title>
+<title>О сайте | ACCMarket</title>
 {% endblock %}
 
 {% block body %}
-<h1>Пиписи</h1>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">О нашем сайте</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row align-items-center g-4">
+                        <div class="col-md-4 text-center">
+                            <img alt="Логотип ACCMarket" src="{{ url_for('static', filename='images/logo.PNG') }}" style="max-width: 200px; height: auto;">
+                        </div>
+                        <div class="col-md-8">
+                            <h3 class="text-primary">ACC Market</h3>
+                            <p class="lead">Сайт с дешевыми аккаунтами и донатами стал доступен каждому!</p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4 g-4">
+                        <div class="col-md-6">
+                            <div class="card border-primary">
+                                <div class="card-body">
+                                    <h4><i class="bi bi-shield-check text-primary"></i> Гарантии</h4>
+                                    <p>Все аккаунты проходят 3-этапную проверку</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-primary">
+                                <div class="card-body">
+                                    <h4><i class="bi bi-clock-history text-primary"></i> Поддержка</h4>
+                                    <p>Круглосуточная помощь в решении вопросов(Писать в Telegram @help_manager_site)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
